@@ -1,0 +1,14 @@
+MongoDBのメモ
+
+macportを使ってMongoDBをインストール
+
+/var/lib/mongodb/data ディレクトリを作成
+
+sudo mongod --dbpath=/var/lib/mongodb でサーバ起動
+
+データ移行
+
+mongodump --host (localhost) でデータをダンプ
+
+mongorestore -d (db_name) --drop ./dump/db_nameで指定したDBをリストア
+mongorestore --drop ./dumpでまとめてリストア 

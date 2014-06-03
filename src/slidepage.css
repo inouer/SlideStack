@@ -1,0 +1,420 @@
+@CHARSET "utf-8";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    /*
+    max-width: 720px;
+    max-height: 540px;
+    */
+    z-index: 0;
+    /*user-select: none;*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    overflow: hidden;
+}
+
+.slideFullscreen {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+    /*user-select: none;*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#slideController {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 720px;
+    max-height: 540px;
+    z-index: 2;
+    /*user-select: none;*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#slideEditor {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*
+    max-width: 720px;
+    max-height: 540px;
+    */
+    z-index: 1;
+    /*user-select: none;*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#annotationText {
+    font-size: 80%;
+    background-color: rgba(255,255,255,1.0);
+    border: thick #000000 solid;
+}
+
+.slideContainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 720px;
+    height: 540px;
+
+    text-align: center;
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+.slideContainerFullscreen {
+    height: 100%;
+    width: 80%;
+    margin: 0px auto;
+    text-align: center;
+    z-index: 0;
+}
+
+#controllerItems {
+    position: absolute;
+    max-height: 70px;
+    text-align: center;
+    margin: 0px auto;
+    z-index: 3;
+
+    background-color: rgb(30,30,30);
+
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#828282', endColorstr = '#000000');*/
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#828282', endColorstr = '#000000')";*/
+    /*background-image: -moz-linear-gradient(top, #828282, #000000);*/
+    /*background-image: -ms-linear-gradient(top, #828282, #000000);*/
+    /*background-image: -o-linear-gradient(top, #828282, #000000);*/
+    /*background-image: -webkit-gradient(linear, center top, center bottom, from(#828282), to(#000000));*/
+    /*background-image: -webkit-linear-gradient(top, #828282, #000000);*/
+
+    cursor:auto;
+}
+
+.controllerLine {
+    clear: left;
+    margin: 0px auto;
+}
+
+#controllerLine1 {
+    text-align: center;
+    width: 100%;
+    height: 20px;
+}
+
+#controllerLine2 {
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.controllerButtons{
+    cursor: pointer;
+    margin-top:-5px;
+}
+
+#editTool {
+    margin-right: 10px;
+    float: left;
+}
+
+#commentOnOff {
+    margin-right: 10px;
+    float: left;
+}
+
+#pointer {
+    margin-right: 10px;
+    float: left;
+}
+
+#sendPageLeftArrow {
+    float: left;
+}
+
+#sendPageRightArrow {
+    float: left;
+}
+
+#jquery-ui-slider {
+    width: 350px;
+    max-width: 350px;
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+#autoSendPage{
+    margin-left: 10px;
+    float: left;
+}
+
+#fullScreen {
+    margin-left: 10px;
+    float: left;
+}
+
+#pageNum {
+    margin: 0px auto 0px auto;
+    color: white;
+    font-size: 12pt;
+}
+
+#autoSendPageStart{
+    margin: 5px 0px 0px 10px;
+    float: left;
+}
+
+#autoSendPageStop{
+    margin: 5px 0px 0px 10px;
+    float: left;     
+}
+
+#slideEditMenu {
+    width: 100%;
+    height: auto;
+    clear: left;
+}
+
+.editMenuButtonsUnselected {
+    vertical-align: middle;
+}
+
+.editMenuButtonsSelected {
+    vertical-align: middle;
+    background-color: #81EACE;
+}
+
+.fontsizeSetting {
+    /*ime-mode: disabled;*/
+}
+
+.redButtonBefore {
+    color: white;
+    width: 40px;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+    cursor: pointer;
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e8a5ae', endColorstr = '#9c0318');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e8a5ae', endColorstr = '#9c0318')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #e8a5ae, #9c0318);
+    background-image: -ms-linear-gradient(top, #e8a5ae, #9c0318);
+    background-image: -o-linear-gradient(top, #e8a5ae, #9c0318);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8a5ae), to(#9c0318));
+    background-image: -webkit-linear-gradient(top, #e8a5ae, #9c0318);
+    /*background-image: linear-gradient(top, #e8a5ae, #9c0318);*/
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+    opacity: 0.8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 80);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity = 80);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+}
+
+.redButtonAfter {
+    color: white;
+    width: 40px;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+    cursor: pointer;
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e8a5ae', endColorstr = '#9c0318');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e8a5ae', endColorstr = '#9c0318')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #e8a5ae, #9c0318);
+    background-image: -ms-linear-gradient(top, #e8a5ae, #9c0318);
+    background-image: -o-linear-gradient(top, #e8a5ae, #9c0318);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8a5ae), to(#9c0318));
+    background-image: -webkit-linear-gradient(top, #e8a5ae, #9c0318);
+    /*background-image: linear-gradient(top, #e8a5ae, #9c0318);*/
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+}
+
+.blueButtonBefore {
+    color: white;
+    width: 40px;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+    cursor: pointer;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#5c5cff');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#5c5cff')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #ffffff, #5c5cff);
+    background-image: -ms-linear-gradient(top, #ffffff, #5c5cff);
+    background-image: -o-linear-gradient(top, #ffffff, #5c5cff);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#5c5cff));
+    background-image: -webkit-linear-gradient(top, #ffffff, #5c5cff);
+    /*background-image: linear-gradient(top, #ffffff, #5c5cff);*/
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+}
+
+.blueButtonAfter {
+    color: white;
+    width: 40px;
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+    cursor: pointer;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cbc7ff', endColorstr = '#1425ff');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cbc7ff', endColorstr = '#1425ff')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -ms-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -o-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#cbc7ff), to(#1425ff));
+    background-image: -webkit-linear-gradient(top, #cbc7ff, #1425ff);
+    /*background-image: linear-gradient(top, #cbc7ff, #1425ff);*/
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+    opacity: 0.86;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 86);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity = 86);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+}
+
+#commentSpace{
+    background-color:rgba(255,255,255,0.95);
+    border-right:1px solid gray;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.commentBox{
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#e3e1e0');*/
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#e3e1e0')";*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    /*background-image: -moz-linear-gradient(top, #ffffff, #e3e1e0);*/
+    /*background-image: -ms-linear-gradient(top, #ffffff, #e3e1e0);*/
+    /*background-image: -o-linear-gradient(top, #ffffff, #e3e1e0);*/
+    /*background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#e3e1e0));*/
+    /*background-image: -webkit-linear-gradient(top, #ffffff, #e3e1e0);*/
+    /*background-image: linear-gradient(top, #ffffff, #e3e1e0);*/
+    /*--IE9 DOES NOT SUPPORT CSS3 GRADIENT BACKGROUNDS--*/
+
+    border-bottom: 1px solid #000000;
+}
+
+#commentSendButton{
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid black;
+    color:#696969;
+    width:auto;
+    height:auto;
+    font-size: 10pt;
+    padding: 2px;
+    cursor: pointer;
+}
+
+#slidestackSearcher{
+    position:absolute;
+    right: 10px;
+    background-color:rgba(255,255,255,0.95);
+}
+
+#searcherQuery{
+    float: left;
+}
+
+#resultNum{
+    float: left;
+    margin-top: 2px;
+    font-size: 10pt;
+}

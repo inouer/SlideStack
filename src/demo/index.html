@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>SlideStacker</title>
+
+<link rel="stylesheet" href="./uploadpage.css" type="text/css">
+<link rel="stylesheet" href="./ui/development-bundle/themes/base/jquery.ui.all.css" type="text/css">
+<link rel="stylesheet" href="./lib/pagination/pagination.css" type="text/css">
+
+<!--
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="./jquery-easyui/jquery.easyui.min.js"></script>
+<script src="./ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="./lib/modcoder_excolor/jquery.modcoder.excolor.js"></script>
+<script type="text/javascript" src="./lib/jquery.balloon.js"></script>
+<script type="text/javascript" src="./lib/pagination/jquery.pagination.js"></script>
+-->
+
+<!-- <script src="./uploadpage.js"></script> -->
+
+<!--
+<link rel="stylesheet" href="./uploadpage.css" type="text/css">
+<link rel="stylesheet" href="./ui/development-bundle/themes/base/jquery.ui.all.css" type="text/css">
+<link rel="stylesheet" href="./lib/pagination/pagination.css" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="./jquery-easyui/jquery.easyui.min.js"></script>
+<script src="./ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="./lib/modcoder_excolor/jquery.modcoder.excolor.js"></script>
+<script type="text/javascript" src="./lib/jquery.balloon.js"></script>
+<script type="text/javascript" src="./lib/pagination/jquery.pagination.js"></script>
+
+<script src="./uploadpage.js"></script>
+-->
+
+</head>
+<body>                
+    <div id="contents">
+        <div id="menu">
+            <div id="menuManage" class="menuItems">
+                SlideStacker
+            </div>
+            <!--
+            <div id="menuUpload" class="menuItems">
+                Upload
+            </div>
+            -->
+            <!--
+            <div id="menuSearch" class="menuItems">
+                検索
+            </div>
+            -->
+            
+            <!--
+            <img id="userMenu" src="./img/user.png" style="cursor: pointer;"></img>
+            -->   
+        </div>
+        
+        <div id="uploadedFiles" class="contents" style="display: block;">
+            <!-- <h2>スライドスタック一覧</h2> -->
+            <div id="uploadedSlides">
+                <iframe class="katostack" src="http://winter.ics.nitech.ac.jp/~toralab/katostack/kato" width="450px" height="350" mytubeid="mytube3"></iframe>
+                <iframe class="katostack" src="http://winter.ics.nitech.ac.jp/~toralab/katostack/0622_swo_hriata" width="450px" height="350" mytubeid="mytube3"></iframe>
+                <iframe class="katostack" src="http://winter.ics.nitech.ac.jp/~toralab/katostack/graduate_thesis" width="450px" height="350" mytubeid="mytube3"></iframe>
+                <iframe class="katostack" src="http://winter.ics.nitech.ac.jp/~toralab/katostack/kato_graduate_study2" width="450px" height="350" mytubeid="mytube3"></iframe>
+            </div>
+            <br>
+            <center><div id="pagination" class="pagination" style="clear:left;"></div></center>
+        </div>
+        
+        <div id="uploadPage" class="contents" style="display: none;">
+                <div id="fileSelect" class="contents" style="display: block;">
+                    <h2>ファイルをアップロードしてスライドスタックを作成します．
+                    <br>
+                    アップロードするファイルを選択するか，ドラッグ＆ドロップしてください．</h2>
+                    <div id="fileSelectUpload">
+                        <div id="holder" class="">
+                            <input id="selector" type="file" name="file[]" multiple="">
+                        </div>                     
+                    </div>
+                </div>
+
+                <div id="uploadState" class="contents" style="display: none;">
+                    <h2>アップロードしています．</h2>
+                    
+                    <progress id="uploadProgressbar" max="100" value="1"></progress>
+                    
+                    <p id="progressmsg"></p>
+                </div>
+        </div>
+        
+        <div id="slideManage" class="contents" style="display: none;">
+            <div id="editButtons" class="manageItems">
+                <span id="slideReuseButton">
+                    Reuse
+                </span>
+                <span id="slideDeleteButton">
+                    Delete
+                </span>
+                <!--
+                <span id="slideSaveButton">
+                    設定
+                </span>
+                -->
+            </div>
+            
+            <div id="manageMain">                    
+                <div id="slidestackThumbnails" class="manageItems">
+                </div>
+                
+                <div id="selectedSlide">
+                </div>
+                
+                <div id="slidestackInfo" class="manageItems">
+                    <h3>スライドスタック情報</h3>
+                    <div id="creationDate"></div>  
+                
+                    <div id="slidestackTag">
+                        <h3>下記のタグを用いてスライドスタックをWebページに設置</h3>
+                        <textarea id="slidestackTagText" readonly style="resize: none;">
+                        </textarea>                
+                    </div>              
+                </div>
+                
+                <div id="settingItems" class="manageItems">
+                    <h3>コントローラの設定</h3>
+                    <div id="controllerSettingItems">
+                    </div>
+                    <h3>サイズ</h3>
+                    <div id="slidestackSize">
+                    </div>
+                </div>         
+            </div>
+            
+            
+            <div id="slideSearch" class="contents"">                
+                <input id="searchForm" type="text" size="100" />
+                <span id="searchSubmitButton" class="searchButtonBefore">
+                    検索
+                </span>
+                
+                <div id="searchMessage">
+                </div>
+                
+                <div id="searchedSlides">
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

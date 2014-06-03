@@ -1,0 +1,162 @@
+body {
+    font-family: "ヒラギノ丸ゴ Pro W4","Hiragino Maru Gothic Pro";   
+}
+
+.hukushu {
+    font-size: 36px;
+    font-family: "ヒラギノ角ゴ Std W8","Hiragino Kaku Gothic Std";
+    background-color: yellow;
+    width: 80px;
+    padding: 3px;
+    position: absolute;
+    top: 110px;
+    left: 500px;
+    
+    -webkit-transform: rotate(-20deg);
+    -webkit-box-shadow: 0 2px 4px #999;
+}
+
+#slidego-img {
+    width: 600px;
+    position: relative;
+    top: 0px;
+    left: 100px;
+}
+
+/************************************/
+@-webkit-keyframes bound {
+    0% {-webkit-transform: translate(0px,-500px);}
+    55% {-webkit-transform: translate(0px,0px);}
+    70% {-webkit-transform: translate(0px, -200px);}
+    80% {-webkit-transform: translate(0px, 0px);}
+    90% {-webkit-transform: translate(0px, -50px);}
+    100% {-webkit-transform: translate(0px, 0px);}
+}
+.animation-bound {
+    visibility: hidden;   
+}
+.animation-bound.build {
+    visibility: visible;
+    -webkit-animation: bound 2000ms ease both;
+}
+.animation-bound.built {
+    visibility: visible;
+    -webkit-transform: translate(0px, 0px);
+}
+
+/*********************************/
+@-webkit-keyframes slide {
+    from {-webkit-transform: translate(0,300px);}
+    to {-webkit-transform: translate(0,0px);}
+}
+.animation-slide {
+    visibility: hidden;
+}
+.animation-slide.build {
+    -webkit-animation-name: slide;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    visibility: visible;
+}
+.animation-slide.built {
+    visibility: visible;
+    -webkit-transform: translate(0,0px);  
+}
+/********************************/
+
+#container article.prev {
+}
+
+#container article.current {
+    display:block;
+}
+
+#container article.next {
+}
+
+
+@-webkit-keyframes slide-fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+.animation-slide-fade {
+    -webkit-animation-name: slide-fade;
+    -webkit-animation-duration: 2s;  
+}
+
+/* for visibility */
+.animation2 { visibility: hidden; }
+.animation2.build {
+-webkit-animation: keyframes0 1ms linear 0ms both,
+        keyframes1 1822ms linear 0ms,
+        keyframes2 664ms linear 0ms ,
+        keyframes3 664ms linear 664ms ,
+        keyframes4 332ms linear 1324ms ,
+        keyframes5 164ms linear 1656ms ;
+}
+@-webkit-keyframes keyframes0 {
+from { visibility : hidden; }
+to {visibility : visible; }
+}
+
+/* animation for translate */
+@-webkit-keyframes keyframes1 {
+0% { left: 294px; }
+100% { left: 474px; }
+}
+
+/* animation for translate */
+@-webkit-keyframes keyframes2 {
+0% { top: -25px; }
+7% { top: -24px; }
+20% { top: -17px; }
+46% { top: 20px; }
+100% { top: 153px; }
+}
+
+/* animation for translate */
+
+@-webkit-keyframes keyframes3 {
+0% { top: 154px; }
+26% { top: 109px; }
+40% { top: 96px; }
+46% { top: 94px; }
+50% { top: 94px; }
+53% { top: 94px; }
+60% { top: 96px; }
+73% { top: 109px; }
+100% { top: 154px; }
+}
+
+/* animation for translate */
+
+@-webkit-keyframes keyframes4 {
+0% { top: 154px; }
+26% { top: 139px; }
+40% { top: 134px; }
+46% { top: 134px; }
+50% { top: 134px; }
+53% { top: 134px; }
+60% { top: 134px; }
+73% { top: 139px; }
+100% { top: 154px; }
+}
+
+/* animation for translate */
+
+@-webkit-keyframes keyframes5 {
+0% { top: 154px; }
+26% { top: 149px; }
+40% { top: 147px; }
+46% { top: 147px; }
+50% { top: 147px; }
+53% { top: 147px; }
+60% { top: 147px; }
+73% { top: 149px; }
+100% { top: 154px; }
+}
+.aa {
+    left: 100px;   
+}

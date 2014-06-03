@@ -1,0 +1,466 @@
+body {
+    background-image: url(./img/back.jpg);
+    background-repeat: repeat;
+    filter: Alpha(opacity=90);
+}
+
+h2{
+	font-size:11pt;
+}
+
+h3{
+    font-size:8pt;
+}
+
+#menu {
+    padding: 10px 10px 10px 10px;
+    vertical-align:middle;
+    background-color:black;
+    color:white;
+    width:100%;
+    height:50px;
+}
+
+.menuItems {
+    vertical-align: middle;
+    float: left;
+    margin: 0px 10px 0px 10px;
+}
+
+#menuManage{
+    font-size:30pt;    
+}
+
+#menuUpload {
+    position:relative;
+    margin: 10px 50px 0px 50px;
+    
+   border-top: 1px solid #4f3811;
+   background: #e8e161;
+   background: -webkit-gradient(linear, left top, left bottom, from(#b87e0b), to(#e8e161));
+   background: -webkit-linear-gradient(top, #b87e0b, #e8e161);
+   background: -moz-linear-gradient(top, #b87e0b, #e8e161);
+   background: -ms-linear-gradient(top, #b87e0b, #e8e161);
+   background: -o-linear-gradient(top, #b87e0b, #e8e161);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 14pt;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+#menuUpload:hover {
+   border-top-color: #a15900;
+   background: #a15900;
+   color: #ccc;
+}
+#menuUpload:active {
+   border-top-color: #a15900;
+   background: #a15900;
+   color: #ccc;
+}
+
+#userMenu{
+    float: right;
+    margin: 10px 50px 0px 50px;
+}
+
+#contents{
+    background-color: rgba(255,255,255,0.9);
+    text-align:left;
+    margin: 0px auto;
+	width: 100%;
+	height: 100%;
+	min-width: 1400px;
+}
+
+.contents {
+    clear: left;
+    height:80%;
+    padding: 10px 30px 10px 30px;
+}
+
+#uploadedSlides{
+    text-align: center;
+}
+
+#fileSelectUpload {
+    text-align: center;
+}
+
+#holder {
+    text-align:left;
+    margin:0px auto;
+    width: 90%;
+    height: 300px;
+    border: 3px;
+    border-style: dashed;
+}
+
+#uploadProgressbar {
+    width: 50%;
+}
+
+.slideIframe{
+    width: 280px;
+    height: 210px;
+    overflow: hidden;
+    border: 1px solid #000000;
+}
+
+.slideDiv{
+    float: left;
+    width: 280px;
+    height: 290px;
+    margin-right:20px;
+    margin-left:20px;
+   
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
+
+#slideManage {
+    position:relative;
+    width:1200px;
+    margin:0px auto;
+}
+
+.manageItems{
+    padding: 10px 5px 10px 5px;
+}
+
+#editButtons {
+    position:absolute;
+    top:10px;
+    left:0px;
+    width: 100%;
+    height: 20px;
+    background-color:#F5DEB3;
+    vertical-align: middle;
+}
+
+#slideReuseButton {
+   float:left;
+    
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+#slideReuseButton:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+}
+#slideReuseButton:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+}
+
+#slideDeleteButton {
+   float: right;
+   
+   border-top: 1px solid #96d1f8;
+   background: #d97b7b;
+   background: -webkit-gradient(linear, left top, left bottom, from(#f72e2e), to(#d97b7b));
+   background: -webkit-linear-gradient(top, #f72e2e, #d97b7b);
+   background: -moz-linear-gradient(top, #f72e2e, #d97b7b);
+   background: -ms-linear-gradient(top, #f72e2e, #d97b7b);
+   background: -o-linear-gradient(top, #f72e2e, #d97b7b);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+#slideDeleteButton:hover {
+   border-top-color: #a61919;
+   background: #a61919;
+   color: #ccc;
+}
+#slideDeleteButton:active {
+   border-top-color: #5c1b1b;
+   background: #5c1b1b;
+}
+
+#slideSaveButton {
+    text-align: right;
+    padding:5px 10px 5px 10px;
+    font-size: large;
+    float: right;
+    color: white;
+    
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cbc7ff', endColorstr = '#1425ff');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cbc7ff', endColorstr = '#1425ff')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -ms-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -o-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#cbc7ff), to(#1425ff));
+    background-image: -webkit-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: linear-gradient(top, #cbc7ff, #1425ff);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+    opacity: 0.86;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 86);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity = 86);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+}
+
+#manageMain{
+    position:absolute;
+    top:60px;
+    left:0px;
+    clear:left;
+    width:100%;
+    height:90%;
+}
+
+#slidestackThumbnails{
+    float:left;
+    width:270px;
+    height:100%;
+    text-align:center;
+    overflow:scroll;
+}
+
+#selectedSlide {
+    background-image: url(./img/back.jpg);
+    background-repeat: repeat;
+    filter: Alpha(opacity=90);
+    width:600px;
+    height:100%;
+    text-align:center;
+    vertical-align:middle;
+    padding: 70px 0px 0px 0px;
+    float:left;
+}
+
+.selectedSlideIframe{
+    margin: 0px auto;
+}
+
+#slidestackInfo{
+    float:left;
+    width: 360px;
+    height: auto;
+    font-size: 8pt;
+}
+
+#settingItems{
+    float:left;
+    width: 360px;
+    font-size: 8pt;
+    height: auto;
+}
+
+#slidestackTag{
+    clear: left;
+}
+
+#slidestackTagText{
+    clear: left;
+    width: 350px;
+    height: auto;
+    margin: 0px auto;
+    
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 2px #000000;
+    -webkit-box-shadow: 0px 0px 2px #000000;
+    box-shadow: 0px 0px 2px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    opacity: 0.8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 80);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity = 80);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+}
+
+.settingLabel{
+    border-bottom-width : 1px;
+    border-bottom-style : dashed;
+    border-bottom-color : gray;    
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.slideThumbnail{
+    width:160px;
+    height:120px;
+    margin:10px 0px 10px 0px;
+    border: 1px solid #000000;
+}
+
+#slideSearch {
+    position:fixed;
+    background-color: rgba(255,255,255,0.9);
+    top: 10px;
+    right:-900px;
+    width:650px;
+    height:700px;
+    text-align: center;
+    overflow:hidden;
+    border: 3px solid #000000;
+}
+
+#slidestackMakerButton{
+    position: fixed;
+    right: 0px;
+    top: 50%;   
+    width: 50px;
+    height: 50px; 
+    z-index: 999;
+}
+
+#slidestackMaker{
+    position: absolute;
+    top: 70px;
+    left: 750px;
+    text-align: center;
+    width: 350px;
+    height: 650px;
+    overflow:scroll;
+}
+
+#slidestackMakerSubmitButton{
+    margin: 10px auto;
+    text-align: center;
+    width: 80%;
+    height: auto;  
+}
+
+#slidestackMakerHolder{
+    width: 340px;
+    height: 600px;
+    background-color: rgba(188,132,88,0.5);
+    border: 3px;
+    border-style: dashed;
+    text-align: center;  
+    overflow:scroll;
+}
+
+#searchSubmitButton {
+    padding:5px 10px 5px 10px;
+    font-size: large;
+    color: white;
+    z-index:0;
+    
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cbc7ff', endColorstr = '#1425ff');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cbc7ff', endColorstr = '#1425ff')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -ms-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -o-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#cbc7ff), to(#1425ff));
+    background-image: -webkit-linear-gradient(top, #cbc7ff, #1425ff);
+    background-image: linear-gradient(top, #cbc7ff, #1425ff);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+    opacity: 0.86;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 86);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity = 86);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+}
+
+#searchMessage{
+    font-size: 15pt;
+    margin: 10px 0px 10px 0px;
+}
+
+#searchedSlides{
+    width:100%;
+    height:500px;
+    overflow:scroll;
+}
+
+.searchResult{
+    width: 280px;
+    height: 210px;
+    margin: 10px 20px 10px 20px;
+    border: 1px solid #000000;
+    float: left;
+}
+
+.searchResultImage{
+    width: 100%;
+    height: 100%;
+}
+
+.katostack{
+    margin: 0px 70px 20px 70px; 
+}

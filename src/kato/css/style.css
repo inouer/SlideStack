@@ -1,0 +1,323 @@
+:root {
+
+}
+
+body {
+    /*background-color: black;*/
+    /*background: -moz-linear-gradient(left top, #990, #c36 30%, #f60 50%, #000 70%, #066);　/* Firefox用 */
+    background: -webkit-gradient(linear, left top, right bottom, from(#990), color-stop(0.3, #c36), color-stop(0.5, #f60), color-stop(0.7, #000), to(#066)); /* Safari,Google Chrome用 */
+    /*background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#FFF), to(#000));*/
+    /*background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1))); */
+    /*background: -webkit-radial-gradient(center, ellipse cover, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);*/
+    /*background: -webkit-radial-gradient(center, ellipse cover, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 0%,rgba(40,52,59,1) 84%); */
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #ff0000), color-stop(0.85, #ff00ff), color-stop(0.67, #0000ff), color-stop(0.51, #00ffff), color-stop(0.33, #00ff00), color-stop(0.16, #ffff00), color-stop(0.00, #ff0000));*/
+
+}
+
+#container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.0,1.0);
+
+}
+
+#container article {    
+    width: 720px;
+    height: 540px;
+    background-color: white;
+    
+    
+    /* relativeはなくても中央寄せできるが'復習'の位置を設定するには
+    親要素であるarticleのpositionがstatic以外ではないといけないため
+    ここではposition: relativeとした */
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    margin-top: -270px;
+    margin-left: -360px;
+    
+    display: none;
+}
+
+#container article.prev {
+
+}
+
+#container article.current {
+    display: block;
+}
+
+#container article.next {
+
+}
+
+/*目次*/
+#contents{
+	position:fixed;
+	top:0;
+	right:-21%;
+	z-index:1;
+	background-color:rgba(5, 5, 5, 0.05);
+	margin:0;
+	width:20%;
+	padding:0 0 0 2%;
+	-moz-transition:all 0.5s ease;
+	-webkit-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	-ms-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	box-shadow:1px 1px 2px 2px rgba(0,0,0,0.2);
+	border-radius:0 0 0 10px;
+	overflow:scroll;
+	font-size:12px;
+	line-height:17px;
+    /*
+	background-image:-moz-linear-gradient(rgba(255,255,255,0.1) 50%, rgba(200,200,255,0.1) 50%);
+	background-image:-webkit-linear-gradient(rgba(255,255,255,0.1) 50%, rgba(200,200,255,0.1) 50%);
+	background-image:-o-linear-gradient(rgba(255,255,255,0.1) 50%, rgba(200,200,255,0.1) 50%);
+	background-image:-ms-linear-gradient(rgba(255,255,255,0.1) 50%, rgba(200,200,255,0.1) 50%);
+	background-image:linear-gradient(rgba(255,255,255,0.1) 50%, rgba(200,200,255,0.1) 50%);
+	background-size:1px 34px;*/
+    height:100%;
+ /*   opacity:0.5;*/
+}
+
+/*
+#contents:before{
+	content:"目次";
+	display:block;
+	position:absolute;
+	background-color:rgba(0,0,255,0.8);
+	color:white;
+	font-weight:bold;
+	left:0;
+	width:18px;
+	height:100%;
+	border-style:solid;
+	border-color:darkblue;
+	border-width:0 2px 0 0;
+	border-radius:0 0 0 10px;
+	text-align:center;
+}
+*/
+#contents:hover{
+    /*visibility: visible;*/
+	right:0;
+    background-color:rgba(255,255,255,0.5);
+/*    background-color:rgba(157, 175, 57,0.7)*/
+}
+
+.thumbnail {
+    width: 100%;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    opacity:0.5;
+    filter: alpha(opacity=50);
+}
+.thumbnail:hover {
+    box-shadow: 0 0 10px #aaa;
+    transform: scale(1.02);
+    opacity:1.0;
+    filter: alpha(opacity=100);
+}
+
+/*********************************************************************************/
+.timer {
+	padding: 10px;
+	background: linear-gradient(top, #222, #444);
+	overflow: hidden;
+	display: inline-block;
+	/*border: 7px solid #efefef;
+	border-radius: 5px;*/
+	position: relative;
+	
+	box-shadow: 
+		inset 0 -2px 10px 1px rgba(0, 0, 0, 0.75), 
+		0 5px 20px -10px rgba(0, 0, 0, 1);
+}
+
+.cell {
+	/*Should only display 1 digit. Hence height = line height of .numbers
+	and width = width of .numbers*/
+	width: 0.50em;
+	height: 30px;
+	font-size: 40px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+}
+
+.numbers {
+	width: 0.6em;
+	line-height: 30px;
+	font-family: digital, arial, verdana;
+	text-align: center;
+	color: #fff;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	/*Glow to the text*/
+	text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+
+/*Styles for the controls*/
+#timer_controls {
+	margin-top: -5px;
+}
+#timer_controls label {
+	cursor: pointer;
+	padding: 5px 5px;
+	background: #efefef;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	border-radius: 0 0 3px 3px;
+}
+input[name="controls"] {display: none;}
+
+/*Control code*/
+#stop:checked~.timer .numbers {animation-play-state: paused;}
+#start:checked~.timer .numbers {animation-play-state: running;}
+#reset:checked~.timer .numbers {animation: none;}
+
+.moveten {
+	/*The digits move but dont look good. We will use steps now
+	10 digits = 10 steps. You can now see the digits swapping instead of 
+	moving pixel-by-pixel*/
+	animation: moveten 1s steps(10, end) infinite;
+	/*By default animation should be paused*/
+	animation-play-state: paused;
+}
+.movesix {
+	animation: movesix 1s steps(6, end) infinite;
+	animation-play-state: paused;
+}
+
+/*Now we need to sync the animation speed with time speed*/
+/*One second per digit. 10 digits. Hence 10s*/
+.second {animation-duration: 10s;}
+.tensecond {animation-duration: 60s;} /*60 times .second*/
+
+.milisecond {animation-duration: 1s;} /*1/10th of .second*/
+.tenmilisecond {animation-duration: 0.1s;}
+.hundredmilisecond {animation-duration: 0.01s;}
+
+.minute {animation-duration: 600s;} /*60 times .second*/
+.tenminute {animation-duration: 3600s;} /*60 times .minute*/
+
+.hour {animation-duration: 36000s;} /*60 times .minute*/
+.tenhour {animation-duration: 360000s;} /*10 times .hour*/
+
+/*The stopwatch looks good now. Lets add some styles*/
+
+/*Lets animate the digit now - the main part of this tutorial*/
+/*We are using prefixfree, so no need of vendor prefixes*/
+/*The logic of the animation is to alter the 'top' value of the absolutely
+positioned .numbers*/
+/*Minutes and Seconds should be limited to only '60' and not '100'
+Hence we need to create 2 animations. One with 10 steps and 10 digits and
+the other one with 6 steps and 6 digits*/
+@keyframes moveten {
+	0% {top: 0;}
+	100% {top: -300px;} 
+	/*height = 40. digits = 10. hence -400 to move it completely to the top*/
+}
+
+@keyframes movesix {
+	0% {top: 0;}
+	100% {top: -180px;} 
+	/*height = 40. digits = 6. hence -240 to move it completely to the top*/
+}
+
+
+/*Lets use a better font for the numbers*/
+@font-face {
+	font-family: 'digital';
+	src: url('http://thecodeplayer.com/uploads/fonts/DS-DIGI.TTF');
+	
+}
+
+#slidetimer{
+	position:fixed;
+	top:0;
+	left:-115px;
+	z-index:1;
+/*	background-color:white;*/
+	margin:0;
+	width:120px;
+	padding:0 0 0 0px;
+	-moz-transition:all 0.5s ease;
+	-webkit-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	-ms-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	box-shadow:1px 1px 2px 2px rgba(0,0,0,0.5);
+	border-radius:0 0 0 10px;
+	overflow:hidden;
+	font-size:12px;
+	line-height:17px;
+    opacity:0.1
+}
+#slidetimer:hover {
+    left:0px;
+    opacity:1;
+}
+/*********************************************************************************/
+#simple-editor {
+    position:fixed;
+	top:100px;
+	left:-20px;
+	z-index:1;
+/*	background-color:white;*/
+	margin:0;
+	width:25px;
+	padding:0 0 0 0px;
+	-moz-transition:all 0.5s ease;
+	-webkit-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	-ms-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	box-shadow:1px 1px 2px 2px rgba(0,0,0,0.5);
+	border-radius:0 5px 5px 0;
+	overflow:hidden;
+	font-size:12px;
+	line-height:17px;
+    opacity:0.1;
+}
+#simple-editor:hover {
+    left:0; 
+    opacity:1;
+}
+/*********************************************************************************/
+/* 以下 inouer による追加 */
+#stackController{
+    position:fixed;
+    bottom:20px;
+    left:-115px;
+    z-index:1;
+/*  background-color:white;*/
+    margin:0;
+    width:120px;
+    padding:0 0 0 0px;
+    -moz-transition:all 0.5s ease;
+    -webkit-transition:all 0.5s ease;
+    -o-transition:all 0.5s ease;
+    -ms-transition:all 0.5s ease;
+    transition:all 0.5s ease;
+    box-shadow:1px 1px 2px 2px rgba(0,0,0,0.5);
+    border-radius:0 5px 5px 0;
+    overflow:hidden;
+    font-size:12px;
+    line-height:17px;
+    opacity:0.1;    
+    vertical-align: middle;
+}
+#stackController:hover {
+    left:0; 
+    opacity:1;
+}
